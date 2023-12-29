@@ -1,0 +1,9 @@
+div{
+  background: red;
+  padding: 20px;
+
+  & span{
+    color: white;
+    font-size: 45px;
+  }
+}
