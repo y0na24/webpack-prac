@@ -9,6 +9,7 @@ export const App: FC<AppProps> = ({}) => {
   return (
     <>
       <div>
+        <h1>Platform={__PLATFORM__}</h1>
         <Link style={{ marginRight: '10px' }} to={'/about'}>
           About
         </Link>
