@@ -27,5 +27,33 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     use: [isDev ? 'style-loader' : loader, cssLoaderWithModules, 'sass-loader']
   }
 
-  return [tsLoader, stylesLoader]
+  const assetsLoader = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: 'asset/resource'
+  }
+
+  const svgrLoader = {
+    test: /\.svg$/,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          icon: true,
+          svgoConfig: {
+            plugins: [
+              {
+                //чтоб мы могли изменят цвет с помощью свойства color
+                name: 'convertColors',
+                params: {
+                  currentColor: true
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+
+  return [tsLoader, stylesLoader, assetsLoader, svgrLoader]
 }

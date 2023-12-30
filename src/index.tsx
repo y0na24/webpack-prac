@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { App } from './components/App'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { AboutPage } from './pages/About'
+import { AboutPage } from '@/pages/About'
 import { ShopPage } from './pages/Shop'
 import { Suspense } from 'react'
 
