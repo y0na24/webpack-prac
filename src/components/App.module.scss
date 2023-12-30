@@ -1,9 +1,13 @@
-div{
+div {
   background: red;
   padding: 20px;
 
-  & span{
+  & span {
     color: white;
     font-size: 45px;
   }
+}
+
+.btn {
+  background-color: gold;
 }
