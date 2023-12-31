@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { Configuration } from 'webpack'
 import { BuildOptions } from './types/types'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
   const isDev = options.mode === 'development'
@@ -19,7 +20,9 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
   ]
 
   if (isDev) {
-    plugins.push(new webpack.ProgressPlugin())
+    // forktscheker-webpack-plugin нужен, чтобы не делать лишние действия во время сборки.
+    //Проверка типов будет в отдельном процессе уже после сборки
+    plugins.push(new webpack.ProgressPlugin(), new ForkTsCheckerWebpackPlugin())
   }
 
   if (isProd) {
