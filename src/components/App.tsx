@@ -8,7 +8,7 @@ interface AppProps {}
 export const App: FC<AppProps> = ({}) => {
   return (
     <>
-      <div>
+      <div data-testid="APP">
         <h1>Platform={__PLATFORM__}</h1>
         <Link style={{ marginRight: '10px' }} to={'/about'}>
           About

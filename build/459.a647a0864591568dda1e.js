@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmodulefederation=self.webpackChunkmodulefederation||[]).push([[459],{459:(e,n,r)=>{r.r(n),r.d(n,{default:()=>u});var t=r(893);const u=function(e){return function(e){if(null==e)throw new TypeError("Cannot destructure "+e)}(e),(0,t.jsx)("h1",{children:"Shop"})}}}]);
